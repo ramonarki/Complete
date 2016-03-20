@@ -1,0 +1,10 @@
+jD=2457465.28;
+r_ECI= [1038.7915010351378 2011.3478690772988 ];
+latES= 43.62*pi/180;
+lonES= 1.45*pi/180;
+hES=0.15; %in km
+[r_ECEF v_ECEF a_ECEF] = ECItoECEF(jD,r_ECI',[0; 0; 0],[0; 0; 0]);
+topo = ECEFtoAzEl(r_ECEF, latES, lonES, hES);
+r = topo(1)*180/pi;
+el=topo(2)*180/pi;
+az=topo(3)*180/pi;
